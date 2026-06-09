@@ -1,1 +1,1 @@
-CUDA_VISIBLE_DEVICES=3 python evaluate.py --folder_destination /home/dohwan/MeanFlowSE_GeCO/results/MeanFlow_results  --ckpt .ckpt
+python evaluate.py --folder_destination /MeanFlowSE/results/MeanFlow_results  --ckpt .ckpt
