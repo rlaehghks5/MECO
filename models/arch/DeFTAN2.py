@@ -1,3 +1,30 @@
+"""
+DeFTAN2 (DeFTAN-II) — original architecture from:
+    D. Lee and J.-W. Choi, "DeFTAN-II: Efficient multichannel speech
+    enhancement with subgroup processing," IEEE/ACM TASLP, vol. 32,
+    pp. 4850-4866, 2024.
+
+NOTE ON THE "modified DeFTAN2-base" USED IN THIS WORK
+-----------------------------------------------------
+This file contains the *original* paper architecture. The discriminative
+separator reported as "a modified DeFTAN2-base" in the implementation
+details was used for an industry project and differs from this code in
+two respects. We document the changes here rather than ship the modified
+weights/config:
+
+1. Subgroup dense block (SDB1d -> gated convolution).
+   The 1-D subgroup dense blocks (`SDB1d`, used as `F_inv` / `T_inv`
+   inside `DeFTAN2block`) are replaced by the gated convolution block
+   from "DeFT-Mamba: Universal Multichannel Sound Separation and Polyphonic Audio Classification", ICASSP 2025.
+
+2. Channel-Enhanced Attention (`CEA` -> gated attention).
+   The CEA module is augmented with a gating mechanism following the
+   gated-attention formulation in "Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free", NeurIPS 2025.
+
+Everything else (encoder/decoder, F-/T-transformer structure, DPFN,
+normalization) is unchanged from the original DeFTAN-II.
+"""
+
 import math
 from collections import OrderedDict
 from typing import Dict, List, Optional, Tuple, Union
