@@ -25,6 +25,22 @@ out-of-domain scenarios.
 
 ---
 
+## 📊 Results (Single-channel)
+While our paper focuses on the multi-channel setting, MeCo also generalizes to the
+**single-channel** scenario. We use the same setup as in the Interspeech paper, but feed
+only the **reference channel** to the separator and corrector. Concretely, the evaluation
+uses the reference channel of the same dataset (WSJ0 + DEMAND, 16 kHz, containing both
+reverberation and noise, with 1-, 2-, and 3-speaker mixtures). Using CrossNet as the
+discriminative separator, MeCo consistently outperforms both the baseline separator and
+the FastGeCo corrector across all signal-fidelity and listening-quality metrics,
+demonstrating that the proposed corrector is not specific to the multi-channel case.
+
+|  | PESQ_WB | ESTOI | Si-SDR | NISQA  | DNSMOS | UTMOS |
+| --- | --- | --- | --- | --- | --- | --- |
+| CrossNet  | 1.45 | 0.56 | 3.72 | 3.03 | 2.53 | 2.21 |
+| CrossNet + FastGeCo | 1.50 | 0.61 | 4.42 | 3.35 | 2.75 | 2.60 |
+| CrossNet + MeCo (Ours) | **1.51** | **0.63** | **4.65** | **3.72** | **2.85** | **2.88** |
+
 ## ⚙️ Installation
 
 Clone the repository and install the required dependencies:
