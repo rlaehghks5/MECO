@@ -27,7 +27,7 @@ out-of-domain scenarios.
 
 ## 📊 Results (Single-channel)
 While our paper focuses on the multi-channel setting, MeCo also generalizes to the
-**single-channel** scenario. We use the same setup as in the Interspeech paper, but feed
+**single-channel** scenario. We use the same setup as in the paper, but feed
 only the **reference channel** to the separator and corrector. Concretely, the evaluation
 uses the reference channel of the same dataset (WSJ0 + DEMAND, 16 kHz, containing both
 reverberation and noise, with 1-, 2-, and 3-speaker mixtures). Using CrossNet as the
