@@ -21,7 +21,13 @@ which combines:
 
 MeCo achieves SOTA performance with minimal computational overhead (+1 NFE, +0.0068 RTF),
 delivering high signal fidelity **and** superior listening quality on both in-domain and
-out-of-domain scenarios.
+out-of-domain scenarios. 
+
+> **A Note on DSO's Broader Applicability.** Although we apply DSO to train a corrector
+> for speech separation, it is not specific to this task. DSO is a general training
+> strategy for one-step MeanFlow models, and we believe it could benefit other one-step
+> generative settings where signal fidelity and perceptual quality both matter—e.g.,
+> general speech restoration, image restoration, or other inverse problems.
 
 ---
 
